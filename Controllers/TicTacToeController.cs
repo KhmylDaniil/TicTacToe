@@ -15,7 +15,7 @@ namespace TicTacToe.Controllers
         }
 
         [HttpGet("GetGameById")]
-        public async Task<GetGameByIdResponse> GetGameById([FromQuery] GetGameByIdCommand command, CancellationToken cancellationToken)
+        public async Task<GetGameByIdResponse> GetGameById(GetGameByIdCommand command, CancellationToken cancellationToken)
         {
             return await _mediator.Send(command is null
                 ? throw new ArgumentNullException(nameof(command))
@@ -23,7 +23,7 @@ namespace TicTacToe.Controllers
         }
 
         [HttpPost("CreateGame")]
-        public async Task<int> CreateGame([FromQuery] CreateGameCommand command, CancellationToken cancellationToken)
+        public async Task<int> CreateGame(CreateGameCommand command, CancellationToken cancellationToken)
         {
             return await _mediator.Send(command is null
                 ? throw new ArgumentNullException(nameof(command))
@@ -31,7 +31,7 @@ namespace TicTacToe.Controllers
         }
 
         [HttpPut("MakeTurn")]
-        public async Task<GetGameByIdResponse> MakeTurn([FromQuery] MakeTurnCommand command, CancellationToken cancellationToken)
+        public async Task<GetGameByIdResponse> MakeTurn(MakeTurnCommand command, CancellationToken cancellationToken)
         {
             return await _mediator.Send(command is null
                 ? throw new ArgumentNullException(nameof(command))
@@ -39,7 +39,7 @@ namespace TicTacToe.Controllers
         }
 
         [HttpDelete("DeleteGame")]
-        public async Task<Unit> DeleteGameById([FromQuery] DeleteGameByIdCommand command, CancellationToken cancellationToken)
+        public async Task<Unit> DeleteGameById(DeleteGameByIdCommand command, CancellationToken cancellationToken)
         {
             return await _mediator.Send(command is null
                 ? throw new ArgumentNullException(nameof(command))
