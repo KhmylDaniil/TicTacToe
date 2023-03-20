@@ -1,5 +1,4 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using System.Reflection;
+﻿using System.Reflection;
 using TicTacToe.PostqreSQL;
 
 namespace TicTacToe
@@ -14,6 +13,7 @@ namespace TicTacToe
 
             services.AddEndpointsApiExplorer();
             services.AddSwaggerGen();
+            services.AddGrpc();
 
             ConfigureDBContext(services, configuration);
         }

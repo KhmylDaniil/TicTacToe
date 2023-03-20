@@ -9,6 +9,9 @@ namespace TicTacToe
         public AutoMapperProfile()
         {
             CreateMap<Game, GetGameByIdResponse>();
+
+            CreateMap<GetGameByIdCommandGRPC, GetGameByIdCommand>();
+            CreateMap<GetGameByIdResponse, GetGameByIdResponseGRPC>();
         }
     }
 }

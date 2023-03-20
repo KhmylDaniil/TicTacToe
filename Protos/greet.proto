@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+option csharp_namespace = "TicTacToe";
+
+package greet;
+
+// The greeting service definition.
+service Greeter {
+  // Sends a greeting
+  rpc GetGameById (GetGameByIdCommandGRPC) returns (GetGameByIdResponseGRPC);
+}
+
+// The request message containing the user's name.
+message GetGameByIdCommandGRPC {
+  int32 id = 1;
+}
+
+// The response message containing the greetings.
+message GetGameByIdResponseGRPC {
+	int32 id = 1;
+	string board = 2;
+	string message = 3;
+}
